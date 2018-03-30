@@ -53,14 +53,14 @@ void loop() {
     }
     case(DRIVE) : {
       if(prizm.readLineSensor(BLACKLINE_SENSOR) == 1 || clock_black_line > 0){
-        prizm.setMotorPowers(-15,15); 
+        prizm.setMotorPowers(15,-15); 
         prizm.setRedLED(HIGH);
 
         if(!(clock_black_line > 0)){
           clock_black_line = 10;
         }
       } else {
-        prizm.setMotorPowers(15,0); 
+        prizm.setMotorPowers(-15,0); 
         prizm.setRedLED(LOW);
       }
       
